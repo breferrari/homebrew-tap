@@ -1,33 +1,31 @@
 class Vigia < Formula
   desc "A live diff monitor for the terminal."
   homepage "https://github.com/breferrari/vigia"
-  version "0.1.0"
+  version "0.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/breferrari/vigia/releases/download/v0.1.0/vigia-aarch64-apple-darwin.tar.xz"
-      sha256 "e184e6e0ad490585b6f3dd9b2a15153ab9582f108deb8bebbcbb31dd379f4f2e"
+      url "https://github.com/breferrari/vigia/releases/download/v0.2.0/vigia-aarch64-apple-darwin.tar.xz"
+      sha256 "ce3698cd2b62f831b92a8b09ed0c19f3c686660d9fd7abc0ff51f08588ee0167"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/breferrari/vigia/releases/download/v0.1.0/vigia-x86_64-apple-darwin.tar.xz"
-      sha256 "6448a4f187dccb72c7f55dd5258b4ce3534e323bb6e1dd9bf7f097ff0c1e7655"
+      url "https://github.com/breferrari/vigia/releases/download/v0.2.0/vigia-x86_64-apple-darwin.tar.xz"
+      sha256 "ef1f333bc3ec694739cb4db24e7c18d1c9f453c0771f9d90cf520d004116adc0"
     end
   end
-  if OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/breferrari/vigia/releases/download/v0.1.0/vigia-x86_64-unknown-linux-musl.tar.xz"
-      sha256 "8d11cdcb11e7437f64df27f310478c1fe4284b5e8bc889ec31727ab5fcc85c43"
-    end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/breferrari/vigia/releases/download/v0.2.0/vigia-x86_64-unknown-linux-musl.tar.xz"
+    sha256 "e7fd7bc1e02d6e250de94f81dcc9d439bd36878cca7cedb893c940e531334a99"
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-pc-windows-gnu": {},
-    "x86_64-unknown-linux-gnu": {},
+    "aarch64-apple-darwin":              {},
+    "x86_64-apple-darwin":               {},
+    "x86_64-pc-windows-gnu":             {},
+    "x86_64-unknown-linux-gnu":          {},
     "x86_64-unknown-linux-musl-dynamic": {},
-    "x86_64-unknown-linux-musl-static": {}
-  }
+    "x86_64-unknown-linux-musl-static":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
