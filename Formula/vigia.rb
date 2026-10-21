@@ -1,20 +1,20 @@
 class Vigia < Formula
   desc "A live diff monitor for the terminal, and a note wire to the coding agent in the pane beside it."
   homepage "https://github.com/breferrari/vigia"
-  version "1.2.1"
+  version "1.2.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/breferrari/vigia/releases/download/v1.2.1/vigia-aarch64-apple-darwin.tar.xz"
-      sha256 "1d2fa383e1d2f02212e84af04311289df152ae2957fecfe074061415ae6b045a"
+      url "https://github.com/breferrari/vigia/releases/download/v1.2.2/vigia-aarch64-apple-darwin.tar.xz"
+      sha256 "98162bd678bdd88d3d3158c806e97e6197fb7daf10e06b0bdfe7875a22907057"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/breferrari/vigia/releases/download/v1.2.1/vigia-x86_64-apple-darwin.tar.xz"
-      sha256 "c2438951c7acddbe7236068e5adc5899090ce65b52bffdffe045d5e898a88534"
+      url "https://github.com/breferrari/vigia/releases/download/v1.2.2/vigia-x86_64-apple-darwin.tar.xz"
+      sha256 "1945bb855f54e4cfae06402ff5003fd106d781fdc1a4740077a48bb4eb85341d"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/breferrari/vigia/releases/download/v1.2.1/vigia-x86_64-unknown-linux-musl.tar.xz"
-    sha256 "912c8d6c3fb7cdca15e7b588f1a6b27a31ad064906b9a6859426eb8555c8d963"
+    url "https://github.com/breferrari/vigia/releases/download/v1.2.2/vigia-x86_64-unknown-linux-musl.tar.xz"
+    sha256 "a754f42d4713db4d30e45751b3247aedf15fc3a28993b36bc8cea37419bfe85b"
   end
   license "MIT"
 
